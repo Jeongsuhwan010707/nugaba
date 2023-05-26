@@ -1,0 +1,46 @@
+div{
+  box-sizing: border-box;
+    border: 1px solid black;
+}
+#login{
+    width: 300px;
+}
+#login-header{
+   
+    height: 50px;
+    
+}
+    #login-1{
+        height: 100%;
+        width: 60%;
+        float: left;
+    }
+        #login-1-1{
+          
+            height: 50%;
+            width: 100%;
+        }
+            
+        #login-1-2{
+         
+            height: 50%;
+            width: 100%;
+        }
+        
+    #login-2{
+       
+        height: 100%;
+        width: 40%;
+        float: left;   
+    }
+        #btn{
+            width: 90%;
+            height: 90%;
+            margin-top: 3px;
+            margin-left: 5px;
+        }
+#login-footer{
+
+    text-align: center;
+    height: 30px;
+}
