@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>계산기 실습</title>
+    </head>
+    <body>
+        <h2>간이 계산기 만들기</h2>
+        첫번째 값 : <input type="text" id="input1"><br>
+        두번째 값 : <input type="text" id="input2"><br>
+        <!-- <button>+</button> -->
+        <input type="button" value="+" onclick="calculate(this.value);">
+        <input type="button" value="-" onclick="calculate(this.value);">
+        <input type="button" value="x" onclick="calculate(this.value);">
+        <input type="button" value="/" onclick="calculate(this.value);">
+        <input type="button" value="%" onclick="calculate(this.value);">
+<!-- this는 event가 발생한 태그 자체를 가져옴 -->
+        <br><br>
+        계산결과 : <span id="result"></span>
+        <script>
+            // function calculate(value){
+            //     // console.log(value);
+            //     // // value는 클릭했을 때 연산자가 넘어옴.
+            //     var input1 = Number(document.querySelector("#input1").value);
+            //     var input2 = parseInt(document.querySelector("#input2").value);
+            //     var result = 0;
+            //     if(value == "+"){
+            //         result = input1 + input2;
+            //         // {}안에서 생성되고 사라지는 변수를 지역변수
+            //     }
+            //     else if(value == "-"){
+            //         result = input1 - input2;
+            //     }
+            //     else if(value == "x"){
+            //         result = input1 * input2;
+            //     }
+            //     else if(value == "/"){
+            //         result = input1 / input2;
+            //     }
+            //     else if(value == "%"){
+            //         result = input1 % input2;
+            //     }
+            //     var spanTag = document.querySelector("#result");
+            //     spanTag.innerText = result;
+           
+            // }
+
+            // function calculate(value) {
+            // // value는 클릭했을때 연산자가 넘어옴.
+            // var input1 = Number(document.querySelector("#input1").value);
+            // var input2 = parseInt(document.querySelector("#input2").value);
+            // var spanTag = document.querySelector("#result");
+            // //var result = 0;
+            // if(value == "+"){
+            //     // 지역변수 : 중괄호 안에서 사라짐.
+            //     var result = input1 + input2;
+            //     spanTag.innerText = result;
+            // }else if(value == "-") {
+            //     var result = input1 - input2;
+            //     spanTag.innerText = result;
+            // }else if(value == "x") {
+            //     var result = input1 * input2;
+            //     spanTag.innerText = result;
+            // }else if(value == "/") {
+            //     var result = input1 / input2;
+            //     spanTag.innerText = result;
+            // }else if(value == "%") {
+            //     var result = input1 % input2;
+            //     spanTag.innerText = result;
+            // }
+            // }
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>지역변수 몰랏을 때 위에코드
+            function calculate(value){
+                var input1 = Number(document.querySelector("#input1").value);
+                var input2 = parseInt(document.querySelector("#input2").value);
+                var result = 0;
+            switch(value){
+                case "+" :  result = input1 + input2
+                break;
+                case "-": result = input1 - input2
+                break;
+                case "x" : result = input1 * input2
+                break;
+                case "/" : result = input1 / input2
+                break;
+                case "%" : result = input1 % input2
+                break;
+                default : alert("잘못 입력하셨습니다.");
+                break;
+                }
+                var spanTag = document.querySelector("#result");
+                spanTag.innerText = result;
+            }
+        </script>
+    </body>
+</html>
