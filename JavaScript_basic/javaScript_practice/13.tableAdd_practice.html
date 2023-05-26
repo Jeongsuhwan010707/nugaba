@@ -5,7 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>입력한 값 출력하기</title>
-        
+        <style>
+            table{
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
         <h2>JS 테이블 추가하기</h2>
@@ -16,8 +20,8 @@
             <label>나이 : <input type="text" name="age" id="age"></label>
             <br>
             <label>성별 : </label>
-            <input type="radio" name="gender" value="M" id="male" onclick="select();"><label for="male"> 남 </label>
-            <input type="radio" name="gender" value="F" id="female" onclick="select();"><label for="female"> 여 </label>
+            <input type="radio" name="gender" value="M" id="male"><label for="male"> 남 </label>
+            <input type="radio" name="gender" value="F" id="female"><label for="female"> 여 </label>
             <br>
             <label>전화번호 : <input type="tel" id="phone"></label>
             <br>
@@ -42,31 +46,18 @@
                 <!-- 입력값들을 추가해 나감 -->
             </table>
             </p>
+            
         <script>
             function addUser(){
-                function select(value){
-                    var m = document.querySelector("#male");
-                    var w = document.querySelector("#female");
-                    var inputTag3;
-                    if(value == "M"){
-                        inputTag3 = m.value;
-                        return inputTag3
-                    }else if(value == "W"){
-                        inputTag3 = w.value;
-                        return inputTag3
-                    }else{}
-                }
-                var inputTag = document.getElementsByTagName("input");
-                var inputTag1 = inputTag[0];
-                var inputTag2 = inputTag[1];
-                // var inputTag3 = inputTag["type=radio"]
-                var inputTag4 = inputTag[4];
-                // var inputTag5 = inputTag[5];
+                var nameVal = document.querySelector("#name").value;
+                var ageVal = document.querySelector("#age").value;
+                // document.querySelectorAll("[type=radio]");
+                var phoneVal = document.querySelector("#phone").value;
+                // document.querySelectorAll("[name=hobby]");
+                var tableTag = document.getElementById("tb1");
+                tableTag.innerHTML +=
+                "<tr><td>"+nameVal+"</td><td>"+ageVal+"</td><td></td><td>"+phoneVal+"</td><td></td></tr>";
 
-                document.querySelector("#tb1").innerHTML += 
-                "<tr><td>"+inputTag1.value+"</td><td>"+inputTag2.value+"</td><td></td><td>"+inputTag4.value+"</td><td></td></tr>";
-                // input.value => th의value
-                
             }
         </script>
     </body>

@@ -42,57 +42,84 @@
             <h3>매개변수로 함수 전달(feat. callback 함수)</h3>
             <h4>익명함수를 매개변수로 활용 <br> 함수도 하나의 자료형이기 때문에
                 매개변수로도 전달 가능함.</h4>
+                <!-- --------------------------5/26진도 -->
+                <p id="p6" style="height: 230px;"></p>
+                <h3>익명함수를 리턴하는 함수</h3>
+                <input type="text" id="name" name="name">
+                <button onclick="jsReturnFunc();">실행확인</button>
+                <p id="p7"></p>
         <script>
-            var numOne = prompt("첫 번째 수를 입력해주세요");
-            var numTwo = prompt("두 번째 수를 입력해주세요");
-            function addNumber(numOne, numTwo) {
-                    
-                    alert("더해드릴게요. 잠시만 기다려주세요.");
-                        var result = parseInt(numOne) + parseInt(numTwo);
-                    return result;
+            var jsReturnFunc = function(){
+                var nameTag = document.getElementById("name");
+                var pTag = document.getElementById("p7");
+                return function(){
+                pTag.innerHTML = nameTag.value;
+            }();
+        }
+
+            callFuncTenTimes(calleeFunc);
+            function callFuncTenTimes(otherFunc){
+                for(var i = 0; i<10; i++){
+                    otherFunc(i);
+                    // otherFunc 콜백함수 넘겨줘서 실행하는 함수
+                    // 순서를 지켜서 실행하고 싶을 때 사용
                 }
-                var resultNum = addNumber(num1,num2);
-                console.log(resultNum);
-                alert(resultNum);
-
-
-            function resultJsFunc5(){
-                var resultNum = jsFunc5(10, 20,30);
-                document.querySelector("#p5").innerText = "결과값 : "+resultNum
             }
-            function jsFunc5(num1, num2, num3) {
+
+            function calleeFunc(num){
+                document.querySelector("#p6").innerHTML += (num+1)+"번째 함수 호출 <br>";
+            }
+            // ------------------------------5/26진도
+        //     var numOne = prompt("첫 번째 수를 입력해주세요");
+        //     var numTwo = prompt("두 번째 수를 입력해주세요");
+        //     function addNumber(numOne, numTwo) {
+                    
+        //             alert("더해드릴게요. 잠시만 기다려주세요.");
+        //                 var result = parseInt(numOne) + parseInt(numTwo);
+        //             return result;
+        //         }
+        //         var resultNum = addNumber(num1,num2);
+        //         console.log(resultNum);
+        //         alert(resultNum);
+
+
+        //     function resultJsFunc5(){
+        //         var resultNum = jsFunc5(10, 20,30);
+        //         document.querySelector("#p5").innerText = "결과값 : "+resultNum
+        //     }
+        //     function jsFunc5(num1, num2, num3) {
                
-               // 2. 계산을 한다.
-               var result = num1 + num2 + num3;
-               return result;
-           }
+        //        // 2. 계산을 한다.
+        //        var result = num1 + num2 + num3;
+        //        return result;
+        //    }
 
-            function resultJsFunc4(){
-                jsFunc4(11,22,33);
-            }
+        //     function resultJsFunc4(){
+        //         jsFunc4(11,22,33);
+        //     }
 
-            function jsFunc4(num1, num2, num3) {
+        //     function jsFunc4(num1, num2, num3) {
                
-                // 2. 계산을 한다.
-                var result = num1 + num2 + num3;
-                // 3. 출력을 한다.
-                document.querySelector("#p4").innerText = "결과값 : "+ result;
-            }
-            //용도 : 초기화 함수, 한번은 실행해야 하지만 
-            //전역 또는 지역변수로 선언하고 싶지 않을 때 사용
-            (function() {
-                document.querySelector("#p3").innerText
-                = "혼자서 실행되는 함수";
-            })();
+        //         // 2. 계산을 한다.
+        //         var result = num1 + num2 + num3;
+        //         // 3. 출력을 한다.
+        //         document.querySelector("#p4").innerText = "결과값 : "+ result;
+        //     }
+        //     //용도 : 초기화 함수, 한번은 실행해야 하지만 
+        //     //전역 또는 지역변수로 선언하고 싶지 않을 때 사용
+        //     (function() {
+        //         document.querySelector("#p3").innerText
+        //         = "혼자서 실행되는 함수";
+        //     })();
 
-            function jsFunc1(){
-                document.querySelector("#p1").innerText
-                = "jsFunc()함수 실행완료";
-            }
-             var jsFunc2 = function(){
-                document.querySelector("#p2").innerText
-                = "jsFunc2()함수 실행완료";
-             }
+        //     function jsFunc1(){
+        //         document.querySelector("#p1").innerText
+        //         = "jsFunc()함수 실행완료";
+        //     }
+        //      var jsFunc2 = function(){
+        //         document.querySelector("#p2").innerText
+        //         = "jsFunc2()함수 실행완료";
+        //      }
             // var jsfunc2 = document.getElementById("js-func2");
             // jsFunc2.addEventListener("click", function(){
             //     document.querySelector("#p2").innerText
